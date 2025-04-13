@@ -50,7 +50,7 @@
     "ember-cli-terser": "^4.0.2",
     "ember-data": "~4.11.0",
     "ember-fetch": "^8.1.1",
-    "ember-leaflet": "5.1.3",
+    "ember-leaflet": "workspace:*",
     "ember-leaflet-marker-cluster": "^1.1.1",
     "ember-load-initializers": "^2.1.2",
     "ember-page-title": "^7.0.0",
