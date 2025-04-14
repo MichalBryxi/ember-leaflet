@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@handlebars/parser': 2.1.0
+
 importers:
 
   .:
@@ -1725,12 +1728,8 @@ packages:
   '@glint/template@1.5.2':
     resolution: {integrity: sha512-fA9FoHCmWsWkoOKWshsOQlS0WCAM7NwwoaeSTHuz5yHvBZmmtkgx3t2SPOTJs85/hWTNVzYC/Gthw7xDUR3BlQ==}
 
-  '@handlebars/parser@2.0.0':
-    resolution: {integrity: sha512-EP9uEDZv/L5Qh9IWuMUGJRfwhXJ4h1dqKTT4/3+tY0eu7sPis7xh23j61SYUnNF4vqCQvvUXpDo9Bh/+q1zASA==}
-
-  '@handlebars/parser@2.2.0':
-    resolution: {integrity: sha512-NiZQQrc4rZ+JxiF+fds1t2bFTyJT+0el2hPsCPHXa5zVA+6tWlO/C01MZLYE0LmxfLopeONoxQr31lXKBLsEww==}
-    engines: {node: ^20.18.0}
+  '@handlebars/parser@2.1.0':
+    resolution: {integrity: sha512-R14NuNaSKZ6eE9y4t0fg/1f8iKd5ZJtSOTIseGFzXINTV17XffhLG2Y0CvdKOgyVQ7+UnXi89YGzRo/xsgwHIA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -11907,7 +11906,7 @@ snapshots:
     dependencies:
       '@glimmer/interfaces': 0.84.3
       '@glimmer/util': 0.84.3
-      '@handlebars/parser': 2.0.0
+      '@handlebars/parser': 2.1.0
       simple-html-tokenizer: 0.5.11
 
   '@glimmer/syntax@0.87.1':
@@ -11915,7 +11914,7 @@ snapshots:
       '@glimmer/interfaces': 0.87.1
       '@glimmer/util': 0.87.1
       '@glimmer/wire-format': 0.87.1
-      '@handlebars/parser': 2.0.0
+      '@handlebars/parser': 2.1.0
       simple-html-tokenizer: 0.5.11
 
   '@glimmer/syntax@0.92.3':
@@ -11923,7 +11922,7 @@ snapshots:
       '@glimmer/interfaces': 0.92.3
       '@glimmer/util': 0.92.3
       '@glimmer/wire-format': 0.92.3
-      '@handlebars/parser': 2.0.0
+      '@handlebars/parser': 2.1.0
       simple-html-tokenizer: 0.5.11
 
   '@glimmer/syntax@0.94.9':
@@ -11931,7 +11930,7 @@ snapshots:
       '@glimmer/interfaces': 0.94.6
       '@glimmer/util': 0.94.8
       '@glimmer/wire-format': 0.94.8
-      '@handlebars/parser': 2.0.0
+      '@handlebars/parser': 2.1.0
       simple-html-tokenizer: 0.5.11
 
   '@glimmer/tracking@1.1.2':
@@ -12016,9 +12015,7 @@ snapshots:
 
   '@glint/template@1.5.2': {}
 
-  '@handlebars/parser@2.0.0': {}
-
-  '@handlebars/parser@2.2.0': {}
+  '@handlebars/parser@2.1.0': {}
 
   '@humanfs/core@0.19.1': {}
 
@@ -15557,7 +15554,7 @@ snapshots:
       '@glimmer/component': 1.1.2(@babel/core@7.26.10)
       '@glimmer/syntax': 0.87.1
       '@glimmer/tracking': 1.1.2
-      '@handlebars/parser': 2.2.0
+      '@handlebars/parser': 2.1.0
       broccoli-bridge: 1.0.0
       broccoli-caching-writer: 3.0.3
       broccoli-filter: 1.3.0

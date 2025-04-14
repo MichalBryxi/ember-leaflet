@@ -17,5 +17,10 @@
   },
   "devDependencies": {
     "concurrently": "^8.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+     "@handlebars/parser": "2.1.0"
+    }
   }
 }
