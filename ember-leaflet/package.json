@@ -61,6 +61,23 @@
     "ember-data": ">= 3.0.0",
     "ember-inflector": ">= 4.0.0"
   },
+  "peerDependenciesMeta": {
+    "@ember-data/adapter": {
+      "optional": true
+    },
+    "@ember-data/model": {
+      "optional": true
+    },
+    "@ember-data/serializer": {
+      "optional": true
+    },
+    "@ember-data/store": {
+      "optional": true
+    },
+    "ember-inflector": {
+      "optional": true
+    }
+  },
   "fastbootDependencies": [
     "crypto"
   ],
