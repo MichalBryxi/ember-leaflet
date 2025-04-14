@@ -59,6 +59,9 @@ importers:
       '@ember/optional-features':
         specifier: ^2.2.0
         version: 2.2.0
+      '@ember/string':
+        specifier: ^3.0.1
+        version: 3.1.1
       '@ember/test-helpers':
         specifier: ^5.1.0
         version: 5.2.1(@babel/core@7.26.10)(@glint/template@1.5.2)(ember-source@6.3.0(@glimmer/component@2.0.0)(@glint/template@1.5.2)(rsvp@4.8.5)(webpack@5.99.5))

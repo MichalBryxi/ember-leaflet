@@ -1,5 +1,11 @@
-{{page-title "Docs"}}
+<div class="ember-view">
+  <DocsHeader class="docs-shadow-lg" as |header|>
+    <header.link @route="addons">
+      Addons
+    </header.link>
+  </DocsHeader>
 
-<h2 id="title">Welcome to Ember</h2>
+  {{outlet}}
 
-{{outlet}}
+  <DocsKeyboardShortcuts />
+</div>
