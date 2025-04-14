@@ -1,0 +1,37 @@
+<DocsViewer as |viewer|>
+  <viewer.nav as |nav|>
+    <nav.section @label="Guides" />
+
+    <li class="mt-8"></li>
+
+    <nav.item @label="Overview" @route="docs.index" />
+    <nav.item @label="Installation" @route="docs.installation" />
+    <nav.item @label="The container" @route="docs.container" />
+    <nav.item @label="Adding layers" @route="docs.adding-layers" />
+    <nav.item @label="Actions and interaction" @route="docs.actions" />
+    <nav.item @label="They're just templates!" @route="docs.templates" />
+    <nav.item @label="Addons" @route="docs.addons" />
+
+    {{!--
+      <nav.section @label="Components"/>
+      {{#each this.componentList as |c|}}
+        <nav.item @label={{concat "<" (classify c) "/>"}} @route="docs.component" @model={{c}}/>
+      {{/each}}
+
+      <nav.section @label="Helpers"/>
+
+      {{#each this.helperList as |h|}}
+        <nav.item @label={{concat "{{" h "}}"}} @route="docs.helper" @model={{h}}/>
+      {{/each}}
+    --}}
+  </viewer.nav>
+
+  <viewer.main>
+    <div class="docs-container">
+      <div class="docs-section">
+        {{outlet}}
+      </div>
+    </div>
+  </viewer.main>
+
+</DocsViewer>
