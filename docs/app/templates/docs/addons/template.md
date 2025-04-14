@@ -16,7 +16,7 @@ ember install ember-leaflet-marker-cluster
 This addon will register a new `<layers.marker-cluster>` component and you can use it like in the following example:
 
 <DocsDemo as |demo|>
-  <demo.example @name="marker-cluster.hbs">
+<demo.example @name="marker-cluster.hbs">
 
     <LeafletMap @lat={{this.lat}} @lng={{this.lng}} @zoom={{this.zoom}} as |layers|>
 
@@ -35,10 +35,10 @@ This addon will register a new `<layers.marker-cluster>` component and you can u
 
     </LeafletMap>
 
-  </demo.example>
+</demo.example>
 
-  <demo.snippet @name="marker-cluster.hbs"/>
-  <demo.snippet @name="marker-cluster.js"/>
+<demo.snippet @name="marker-cluster.hbs"/>
+<demo.snippet @name="marker-cluster.js"/>
 </DocsDemo>
 
 ## Creating an addon
@@ -63,24 +63,24 @@ to register its `marker-cluster` component:
 
 ```js
 // addon/instance-initializers/register-component.js
-import MarkerClusterLayer from '../components/marker-cluster-layer';
+import MarkerClusterLayer from "../components/marker-cluster-layer";
 
 export function initialize(appInstance) {
   // first we lookup the ember leaflet service
-  let emberLeafletService = appInstance.lookup('service:ember-leaflet');
+  let emberLeafletService = appInstance.lookup("service:ember-leaflet");
 
   // to support older versions of ember-leaflet that do not include the service, we add a guard here
   if (emberLeafletService) {
     // we then invoke the `registerComponent` method
-    emberLeafletService.registerComponent('marker-cluster-layer', {
-      as: 'marker-cluster',
-      component: MarkerClusterLayer
+    emberLeafletService.registerComponent("marker-cluster-layer", {
+      as: "marker-cluster",
+      component: MarkerClusterLayer,
     });
   }
 }
 
 export default {
-  initialize
+  initialize,
 };
 ```
 
@@ -103,7 +103,7 @@ want to yield. You should use it like:
 // addon/components/market-cluster-layer.js
 componentsToYield = [
   ...this.componentsToYield,
-  { name: 'marker-layer', as: 'marker' }
+  { name: "marker-layer", as: "marker" },
 ];
 ```
 

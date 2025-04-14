@@ -6,7 +6,10 @@ export default class DocsController extends Controller {
     let componentList = [];
 
     for (let key in requirejs.entries) {
-      if (key.indexOf('ember-leaflet/components/') !== -1 && key.indexOf('jshint') === -1) {
+      if (
+        key.indexOf('ember-leaflet/components/') !== -1 &&
+        key.indexOf('jshint') === -1
+      ) {
         componentList.push(key.split('/').pop());
       }
     }
@@ -18,7 +21,10 @@ export default class DocsController extends Controller {
     let helperList = [];
 
     for (let key in requirejs.entries) {
-      if (key.indexOf('ember-leaflet/helpers/') !== -1 && key.indexOf('jshint') === -1) {
+      if (
+        key.indexOf('ember-leaflet/helpers/') !== -1 &&
+        key.indexOf('jshint') === -1
+      ) {
         helperList.push(key.split('/').pop());
       }
     }

@@ -27,21 +27,21 @@ export default class TemplatesController extends Controller {
       name: 'Sinju Restaurant',
       rating: 4,
       lat: 45.528531,
-      lng: -122.681682
+      lng: -122.681682,
     }),
     new Restaurant({
       name: 'Burgerville',
       rating: 3.8,
       lat: 45.53097,
-      lng: -122.661968
+      lng: -122.661968,
     }),
     new Restaurant({
       name: 'Le Pigeon',
       rating: 4.5,
       lat: 45.522752,
       lng: -122.657979,
-      isOpen: true
-    })
+      isOpen: true,
+    }),
   ];
 
   get dangerZone() {
