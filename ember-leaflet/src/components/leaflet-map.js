@@ -1,19 +1,19 @@
 import { assert } from '@ember/debug';
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import BaseLayer from 'ember-leaflet/components/base-layer';
-import { action } from '@ember/object';
 
-import TileLayer from './tile-layer';
-import WmsTileLayer from './wms-tile-layer';
-import MarkerLayer from './marker-layer';
 import CircleLayer from './circle-layer';
 import CircleMarkerLayer from './circle-marker-layer';
-import ImageLayer from './image-layer';
-import VideoLayer from './video-layer';
-import PolylineLayer from './polyline-layer';
-import PolygonLayer from './polygon-layer';
 import GeojsonLayer from './geojson-layer';
+import ImageLayer from './image-layer';
+import MarkerLayer from './marker-layer';
+import PolygonLayer from './polygon-layer';
+import PolylineLayer from './polyline-layer';
 import RectangleLayer from './rectangle-layer';
+import TileLayer from './tile-layer';
+import VideoLayer from './video-layer';
+import WmsTileLayer from './wms-tile-layer';
 
 /**
  * The central class of ember-leaflet — it is used to create a map on a page and manipulate it.
@@ -398,7 +398,7 @@ export default class LeafletMap extends BaseLayer {
      * @argument transform3DLimit
      * @type {Boolean}
      */
-    'transform3DLimit'
+    'transform3DLimit',
   ];
 
   // Events this map can respond to.
@@ -681,7 +681,7 @@ export default class LeafletMap extends BaseLayer {
      * @argument onZoomanim
      * @type {Function}
      */
-    'zoomanim'
+    'zoomanim',
   ];
 
   leafletDescriptors = [
@@ -691,7 +691,7 @@ export default class LeafletMap extends BaseLayer {
     'maxZoom',
     'center:panTo:zoomPanOptions',
     'bounds:fitBounds:fitBoundsOptions',
-    'maxBounds'
+    'maxBounds',
   ];
 
   componentsToYield = [
@@ -701,13 +701,17 @@ export default class LeafletMap extends BaseLayer {
     { name: 'wms-tile-layer', as: 'wms-tile', component: WmsTileLayer },
     { name: 'marker-layer', as: 'marker', component: MarkerLayer },
     { name: 'circle-layer', as: 'circle', component: CircleLayer },
-    { name: 'circle-marker-layer', as: 'circle-marker', component: CircleMarkerLayer },
+    {
+      name: 'circle-marker-layer',
+      as: 'circle-marker',
+      component: CircleMarkerLayer,
+    },
     { name: 'image-layer', as: 'image', component: ImageLayer },
     { name: 'video-layer', as: 'video', component: VideoLayer },
     { name: 'polyline-layer', as: 'polyline', component: PolylineLayer },
     { name: 'polygon-layer', as: 'polygon', component: PolygonLayer },
     { name: 'geojson-layer', as: 'geojson', component: GeojsonLayer },
-    { name: 'rectangle-layer', as: 'rectangle', component: RectangleLayer }
+    { name: 'rectangle-layer', as: 'rectangle', component: RectangleLayer },
   ];
 
   // required to supress glimmer component error message for acessing bounds property
@@ -752,12 +756,19 @@ export default class LeafletMap extends BaseLayer {
     assert(
       'You must provide either valid `bounds` or a `center` (or `lat`/`lng`) and a `zoom` value.',
       (this.args.bounds && !this.center && this.args.zoom === undefined) ||
-        (!this.args.bounds && this.center && this.args.zoom !== undefined)
+        (!this.args.bounds && this.center && this.args.zoom !== undefined),
     );
     if (this.args.bounds) {
-      this._layer.fitBounds(this.args.bounds, Object.assign({ reset: true }, this.args.fitBoundsOptions));
+      this._layer.fitBounds(
+        this.args.bounds,
+        Object.assign({ reset: true }, this.args.fitBoundsOptions),
+      );
     } else {
-      this._layer.setView(this.center, this.args.zoom, Object.assign({ reset: true }, this.args.zoomPanOptions));
+      this._layer.setView(
+        this.center,
+        this.args.zoom,
+        Object.assign({ reset: true }, this.args.zoomPanOptions),
+      );
     }
   }
 }
