@@ -1,4 +1,4 @@
-import { point } from 'test-app/helpers/point';
+import { point } from 'ember-leaflet/helpers/point';
 import { module, test } from 'qunit';
 /* global L */
 

@@ -1,4 +1,4 @@
-import { latLngBounds } from 'test-app/helpers/lat-lng-bounds';
+import { latLngBounds } from 'ember-leaflet/helpers/lat-lng-bounds';
 import { module, test } from 'qunit';
 /* global L */
 
@@ -7,7 +7,7 @@ module('Unit | Helper | lat-lng-bounds', function () {
     let result = latLngBounds([
       [42.12312412431231, 41.12331213212],
       [44.12312412431231, 43.12331213212],
-      [46.12312412431231, 45.12331213212]
+      [46.12312412431231, 45.12331213212],
     ]);
 
     assert.ok(result);
