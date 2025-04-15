@@ -1,9 +1,10 @@
-import { run } from '@ember/runloop';
 import Application from '@ember/application';
-import ENV from '../../../config/environment';
-import { initialize } from 'test-app/initializers/leaflet-assets';
-import { module, test } from 'qunit';
+import { run } from '@ember/runloop';
+import { initialize } from 'ember-leaflet/initializers/leaflet-assets';
 import Resolver from 'ember-resolver';
+import { module, test } from 'qunit';
+
+import ENV from '../../../config/environment';
 /* global L */
 
 module('Unit | Initializer | leaflet assets', function (hooks) {
@@ -13,12 +14,12 @@ module('Unit | Initializer | leaflet assets', function (hooks) {
     };
     this.TestApplication.initializer({
       name: 'initializer under test',
-      initialize
+      initialize,
     });
 
     this.application = this.TestApplication.create({
       autoboot: false,
-      Resolver
+      Resolver,
     });
   });
 
@@ -31,7 +32,11 @@ module('Unit | Initializer | leaflet assets', function (hooks) {
   test('it sets icon default imagePath to default assets path', async function (assert) {
     await this.application.boot();
 
-    assert.notStrictEqual(typeof L.Icon.Default.imagePath, 'undefined', '`L.Icon.Default.imagePath` is not set');
+    assert.notStrictEqual(
+      typeof L.Icon.Default.imagePath,
+      'undefined',
+      '`L.Icon.Default.imagePath` is not set',
+    );
     assert.strictEqual(L.Icon.Default.imagePath, '/assets/images/');
   });
 
@@ -40,7 +45,10 @@ module('Unit | Initializer | leaflet assets', function (hooks) {
 
     await this.application.boot();
 
-    assert.strictEqual(L.Icon.Default.imagePath, '/path/to/base/assets/images/');
+    assert.strictEqual(
+      L.Icon.Default.imagePath,
+      '/path/to/base/assets/images/',
+    );
   });
 
   test('it sets icon default imagePath with rootURL', async function (assert) {
@@ -49,7 +57,10 @@ module('Unit | Initializer | leaflet assets', function (hooks) {
 
     await this.application.boot();
 
-    assert.strictEqual(L.Icon.Default.imagePath, '/path/to/root/assets/images/');
+    assert.strictEqual(
+      L.Icon.Default.imagePath,
+      '/path/to/root/assets/images/',
+    );
   });
 
   test('it supports empty rootURL', async function (assert) {
