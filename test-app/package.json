@@ -81,6 +81,9 @@
     "stylelint-prettier": "^3.0.0",
     "webpack": "^5.90.2"
   },
+  "dependencies": {
+        "leaflet": "^1.9.4"
+  },
   "peerDependencies": {
     "ember-source": "^4.0.0 || ^5.0.0",
     "leaflet": ">=0.7"

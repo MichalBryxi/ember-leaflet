@@ -1,9 +1,10 @@
 import { A } from '@ember/array';
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
 import { render, settled } from '@ember/test-helpers';
-import hbs from 'htmlbars-inline-precompile';
 import PolylineLayerComponent from 'ember-leaflet/components/polyline-layer';
+import { setupRenderingTest } from 'ember-qunit';
+import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
+
 import locations from '../../helpers/locations';
 
 let arrayPath;
@@ -30,12 +31,17 @@ module('Integration | Component | array path layer', function (hooks) {
   <layers.polyline @locations={{this.locations}} />
 </LeafletMap>`);
 
+    debugger;
     let layerLatLngs = arrayPath._layer.getLatLngs();
     assert.locationsEqual(layerLatLngs[0], locations.chicago);
     assert.locationsEqual(layerLatLngs[1], locations.nyc);
     assert.locationsEqual(layerLatLngs[2], locations.sf);
 
-    this.set('locations', [locations.paris, locations.london, locations.newdelhi]);
+    this.set('locations', [
+      locations.paris,
+      locations.london,
+      locations.newdelhi,
+    ]);
     await settled();
 
     layerLatLngs = arrayPath._layer.getLatLngs();
@@ -111,7 +117,7 @@ module('Integration | Component | array path layer', function (hooks) {
     this.set('locations', [
       [-43.123, 71.123],
       [-43.123, 71.123],
-      [-43.123, 71.123]
+      [-43.123, 71.123],
     ]);
 
     await render(hbs`<LeafletMap @zoom={{this.zoom}} @center={{this.center}} as |layers|>
@@ -126,7 +132,7 @@ module('Integration | Component | array path layer', function (hooks) {
     this.set('locations', [
       [45.528531, -122.681682],
       [45.53097, -122.661968],
-      [45.522752, -122.657979]
+      [45.522752, -122.657979],
     ]);
     await settled();
 

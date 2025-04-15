@@ -23,7 +23,7 @@ export default {
     // See https://github.com/embroider-build/embroider/blob/main/docs/v2-faq.md#how-can-i-define-the-public-exports-of-my-addon
     // Automatically inject global `L` when encountered by any module.
     inject({
-      L: 'leaflet',
+      L: ['leaflet', 'default'],
     }),
 
     addon.publicEntrypoints(['**/*.js', 'index.js']),

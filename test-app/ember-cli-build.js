@@ -37,14 +37,14 @@ module.exports = async function (defaults) {
         package: 'qunit',
       },
     ],
-    webpackConfig(webpackConfig) {
-      // Use ProvidePlugin to automatically provide global `L` from the leaflet package
-      webpackConfig.plugins.push(
-        new webpack.ProvidePlugin({
-          L: 'leaflet',
-        }),
-      );
-      return webpackConfig;
+    packagerOptions: {
+      webpackConfig: {
+        plugins: [
+          new webpack.ProvidePlugin({
+            L: 'leaflet',
+          }),
+        ],
+      },
     },
   });
 };

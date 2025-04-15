@@ -20,7 +20,8 @@
   },
   "pnpm": {
     "overrides": {
-     "@handlebars/parser": "2.1.0"
+     "@handlebars/parser": "2.1.0",
+     "ember-fetch": "8.1.2"
     }
   }
 }
