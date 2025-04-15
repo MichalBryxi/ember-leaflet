@@ -1,5 +1,6 @@
 import { Addon } from '@embroider/addon-dev/rollup';
 import { babel } from '@rollup/plugin-babel';
+import inject from '@rollup/plugin-inject'; // <-- Import the inject plugin
 import copy from 'rollup-plugin-copy';
 
 const addon = new Addon({
@@ -20,6 +21,11 @@ export default {
     // up your addon's public API. Also make sure your package.json#exports
     // is aligned to the config here.
     // See https://github.com/embroider-build/embroider/blob/main/docs/v2-faq.md#how-can-i-define-the-public-exports-of-my-addon
+    // Automatically inject global `L` when encountered by any module.
+    inject({
+      L: 'leaflet',
+    }),
+
     addon.publicEntrypoints(['**/*.js', 'index.js']),
 
     // These are the modules that should get reexported into the traditional
