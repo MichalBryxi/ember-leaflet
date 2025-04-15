@@ -20,5 +20,15 @@ module.exports = function (defaults) {
     },
   });
 
-  return maybeEmbroider(app);
+  return maybeEmbroider(app, {
+    staticAddonTestSupportTrees: true,
+    staticAddonTrees: true,
+    staticEmberSource: true,
+    staticInvokables: true,
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+  });
 };
