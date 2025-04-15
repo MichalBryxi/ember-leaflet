@@ -2,6 +2,7 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const sideWatch = require('@embroider/broccoli-side-watch');
+const webpack = require('webpack'); // Added for ProvidePlugin
 
 module.exports = async function (defaults) {
   const app = new EmberApp(defaults, {
@@ -36,5 +37,14 @@ module.exports = async function (defaults) {
         package: 'qunit',
       },
     ],
+    webpackConfig(webpackConfig) {
+      // Use ProvidePlugin to automatically provide global `L` from the leaflet package
+      webpackConfig.plugins.push(
+        new webpack.ProvidePlugin({
+          L: 'leaflet',
+        }),
+      );
+      return webpackConfig;
+    },
   });
 };
