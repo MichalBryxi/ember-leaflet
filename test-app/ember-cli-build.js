@@ -3,7 +3,7 @@
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const sideWatch = require('@embroider/broccoli-side-watch');
 
-module.exports = function (defaults) {
+module.exports = async function (defaults) {
   const app = new EmberApp(defaults, {
     'ember-cli-babel': { enableTypeScriptTransform: true },
 
@@ -18,6 +18,11 @@ module.exports = function (defaults) {
         watching: ['ember-leaflet'],
       }),
     },
+  });
+
+  const { setConfig } = await import('@warp-drive/build-config');
+  setConfig(app, __dirname, {
+    // WarpDrive/EmberData settings go here (if any)
   });
 
   const { Webpack } = require('@embroider/webpack');
