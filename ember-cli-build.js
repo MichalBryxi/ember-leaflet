@@ -5,7 +5,7 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 module.exports = function (defaults) {
   const app = new EmberAddon(defaults, {
     fingerprint: {
-      exclude: ['assets/images']
+      exclude: ['assets/images', 'test-support.js', 'tests.js']
     },
     'ember-cli-favicon': {
       faviconsConfig: {
